@@ -83,15 +83,6 @@ Key functionalities include:
 
 ---
 
-## 📸 Screenshots
-
-| Home Page | Dashboard | Property Details |
-|------------|------------|------------------|
-| ![Home](assets/screenshots/home.png) | ![Dashboard](assets/screenshots/dashboard.png) | ![Property](assets/screenshots/property.png) |
-
-*(Replace image paths with your actual project screenshots.)*
-
----
 
 ## 🔐 Security Features
 
