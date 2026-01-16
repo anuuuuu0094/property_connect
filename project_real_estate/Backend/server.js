@@ -5,7 +5,7 @@ const morgan = require("morgan");
 // const path = require("path");
 const connectDB = require("./config/db");
 
-dotenv.config();
+dotenv.config({quiet: true});
 
 const app = express();
 
