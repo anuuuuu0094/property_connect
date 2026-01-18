@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: "http://localhost:7000/api", // 👈 change this to your backend URL
+  baseURL: "https://property-connect-backend-95ni.onrender.com/api",
   headers: {
     "Content-Type": "application/json",
   },

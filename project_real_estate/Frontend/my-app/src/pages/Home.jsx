@@ -1,5 +1,4 @@
 // src/Home/Home.jsx
-// src/Home/Home.jsx
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,14 +8,14 @@ import Featured from "../components/Featured";
 import Footer from "../components/Footer";
 import Offer from "../components/Offer";
 import Inquiry from "../components/Inquiry";
+import api from "../api/client";
 
 function Home() {
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:7000/api/properties")
-      .then((res) => res.json())
-      .then((data) => setProperties(data))
+    api.get("/properties")
+      .then((res) => setProperties(res.data))
       .catch((err) => console.error("Error fetching properties:", err));
   }, []);
 

@@ -50,12 +50,14 @@ export default function AuthProvider({ children }) {
     const token = localStorage.getItem("token");
     if (!token) return;
     api
-      .get("/users/profile")
+      .get("/api/users/profile")
       .then(({ data }) => {
         setUser(data);
         localStorage.setItem("user", JSON.stringify(data));
       })
-      .catch(() => {});
+      .catch(() => {
+        logout();
+      });
   }, []);
 
   return (
