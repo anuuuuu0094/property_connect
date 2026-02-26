@@ -107,15 +107,31 @@ export default function Properties() {
     maxPrice: params.get("maxPrice") || "",
   });
 
+  // const fetchData = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const { data } = await api.get("/properties", { params: filters });
+  //     setItems(data);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
   const fetchData = async () => {
-    setLoading(true);
-    try {
-      const { data } = await api.get("/properties", { params: filters });
-      setItems(data);
-    } finally {
-      setLoading(false);
-    }
-  };
+  setLoading(true);
+  try {
+    const cleanFilters = {};
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value) cleanFilters[key] = value;
+    });
+
+    const { data } = await api.get("/properties", { params: cleanFilters });
+    setItems(data);
+  } finally {
+    setLoading(false);
+  }
+};
 
   useEffect(() => {
     fetchData();
